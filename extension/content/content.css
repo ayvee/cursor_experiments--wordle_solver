@@ -1,0 +1,94 @@
+#wordle-solver-overlay {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: 50vh;
+  background-color: rgba(240, 240, 245, 0.92);
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#wordle-solver-overlay .container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#wordle-solver-overlay h2 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+#wordle-solver-overlay button {
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  margin-bottom: 8px;
+}
+
+#wordle-solver-overlay button:hover {
+  background-color: #1976D2;
+}
+
+#wordle-solver-overlay button:disabled {
+  background-color: #BDBDBD;
+  cursor: not-allowed;
+}
+
+#wordle-solver-timer {
+  margin: 4px 0;
+  display: none;
+}
+
+#wordle-solver-status {
+  margin: 4px 0;
+  padding: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+#wordle-solver-status.error {
+  background-color: #FFEBEE;
+  color: #C62828;
+}
+
+#wordle-solver-status.success {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+}
+
+#wordle-solver-suggestion {
+  margin: 4px 0;
+  padding: 10px;
+  background-color: #E3F2FD;
+  border-radius: 4px;
+  display: none;
+}
+
+.suggestion-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.suggestion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.suggestion-word {
+  padding: 5px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  border-left: 3px solid #2196F3;
+} 
