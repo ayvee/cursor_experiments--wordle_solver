@@ -57,11 +57,18 @@ function createOverlay() {
   overlay.appendChild(container);
   document.body.appendChild(overlay);
 
-  return { button, status, timer, suggestion };
+  return { overlay, button, status, timer, suggestion };
 }
 
 // Initialize overlay and set up event listeners
-const { button, status, timer, suggestion } = createOverlay();
+const { overlay, button, status, timer, suggestion } = createOverlay();
+
+// Listen for messages from the background script
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === 'toggleOverlay') {
+    overlay.style.display = overlay.style.display === 'none' ? 'block' : 'none';
+  }
+});
 
 // Timer variables
 let timerInterval;

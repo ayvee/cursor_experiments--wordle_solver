@@ -3,7 +3,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    popup: './popup/popup.js',
     background: './background/background.js',
     options: './options/options.js',
     content: './content/content.js'
@@ -11,6 +10,7 @@ module.exports = {
   output: {
     filename: '[name]/[name].js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true // This will clean the dist folder before each build
   },
   module: {
     rules: [
@@ -31,8 +31,6 @@ module.exports = {
       patterns: [
         { from: 'icons', to: 'icons' },
         { from: 'manifest.json', to: 'manifest.json' },
-        { from: 'popup/popup.html', to: 'popup/popup.html' },
-        { from: 'popup/popup.css', to: 'popup/popup.css' },
         { from: 'options/options.html', to: 'options/options.html' },
         { from: 'content/content.css', to: 'content/content.css' },
         // Copy specific lib files instead of the entire directory
